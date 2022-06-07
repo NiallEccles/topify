@@ -14,3 +14,9 @@
 .icon {
   position: absolute;
 }
+
+.bottom-right {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+}

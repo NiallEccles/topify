@@ -4,11 +4,12 @@ import ArrowLink from "../../assets/m3_arrow_linkout.svg?component";
 
 interface props {
   text: string;
+  alignment: string;
 }
 
 function ShareButton(props: props) {
   return (
-    <button className="share-button">
+    <button className={`share-button ${props.alignment}`}>
         <Mask className="mask" />
         <ArrowLink className="icon" />
       {/* <span className="mask">

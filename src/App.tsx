@@ -13,19 +13,27 @@ function App() {
       <div className="container">
         <Card style={{ gridArea: "name" }}>
           <DisplayName displayName={data.me.display_name} />
-          {/* <ShareButton text="" /> */}
+          <ShareButton text="" alignment={"bottom-right"} />
         </Card>
-        <Card style={{ padding: '0' }}>
+        <div style={{gridArea: 'top-song'}}>
+          <h2 className="section-heading">Top Tracks</h2>
           {data.topTracks.items.map((track, index) => {
-            if(index < 1){
-              return <Artwork key={index} songName={track.name} artistName={track.album.artists} imgUrl={track.album.images[0].url} />
+            if (index < 6) {
+              return (
+                <Card style={{ padding: "0", margin: "0 0 1em 0"}}>
+                  <Artwork
+                    key={index}
+                    songName={track.name}
+                    artistName={track.album.artists}
+                    imgUrl={track.album.images[0].url}
+                  />
+                </Card>
+              );
             } else {
-              return <></>
+              return <></>;
             }
           })}
-        </Card>
-        <Card />
-        <Card />
+        </div>
       </div>
     </main>
   );
