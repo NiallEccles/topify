@@ -5,9 +5,22 @@ import DisplayName from "./components/display-name";
 import data from "./data";
 import Artwork from "./components/artwork";
 import TopArtist from "./components/top-artist";
+import TopGenre from "./components/top-genres";
 
 function App() {
-  console.log(data);
+  let genres: string[] = [];
+  data.topArtists.items.forEach((item)=>{
+    genres.push(...item.genres);
+  });
+
+  interface Counts {
+    [key: string]: number
+  }
+  let counts: Counts = {};
+  genres.forEach(function (genre) { counts[genre] = (counts[genre] || 0) + 1; });
+
+  console.log(counts);
+
   return (
     <main>
       <div className="container">
@@ -16,6 +29,7 @@ function App() {
           <DisplayName displayName={data.me.display_name} />
           <ShareButton text="" alignment={"bottom-right"} />
         </Card>
+        <TopGenre genres={data.topArtists.items} />
         {/* <Card
           style={{
             padding: "0",
