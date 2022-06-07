@@ -17,7 +17,10 @@ body {
   font-family: "Roboto-Medium";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 0 2em;
+
+  background: white;
+  background-size: cover;
+  padding: 2em 0
 }
 
 code {
@@ -39,7 +42,7 @@ code {
   gap: 1em;
   grid-template-areas:
     "name stat . top-song"
-    ". stat . top-song"
-    ". . . top-song"
-    ". . . top-song";
+    "site-title stat . top-song"
+    "top-genre top-genre . top-song"
+    "top-genre top-genre . top-song";
 }

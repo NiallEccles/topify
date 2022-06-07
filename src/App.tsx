@@ -10,8 +10,8 @@ function App() {
   console.log(data);
   return (
     <main>
-      <h1>Topify</h1>
       <div className="container">
+      <h1 style={{gridArea: 'site-title'}}>Topify</h1>
         <Card style={{ gridArea: "name" }}>
           <DisplayName displayName={data.me.display_name} />
           <ShareButton text="" alignment={"bottom-right"} />
@@ -54,6 +54,17 @@ function App() {
             }
           })}
         </div>
+        <Card
+          style={{
+            padding: "0",
+            gridArea: "top-genre",
+          }}
+        >
+          <TopArtist
+            artistName={data.topArtists.items[0].name}
+            imgUrl={data.topArtists.items[0].images[0].url}
+          />
+        </Card>
       </div>
     </main>
   );
