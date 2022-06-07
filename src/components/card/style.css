@@ -11,7 +11,7 @@
     border-radius: 16px;
 }
 
-.card:hover .artwork img {
+.card:hover .artwork img, .card:hover .top-artist, .card:hover .top-artist:after{
     transition: border-radius cubic-bezier(0.4, 0, 0.2, 1) 250ms;
     border-radius: 16px;
 }

@@ -38,8 +38,8 @@ code {
   grid-template-rows: 1fr 1fr 1fr 1fr;
   gap: 1em;
   grid-template-areas:
-    "name stat stat top-song"
-    ". . . top-song"
+    "name stat . top-song"
+    ". stat . top-song"
     ". . . top-song"
     ". . . top-song";
 }

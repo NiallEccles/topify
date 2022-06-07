@@ -1,0 +1,19 @@
+.top-artist {
+    width: 100%;
+    height: 100%;
+    transition: border-radius cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+    border-radius: 32px;
+    background-size: cover;
+    position: relative;
+}
+
+.top-artist:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+    border-radius: 32px;
+}
