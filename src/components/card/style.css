@@ -1,0 +1,26 @@
+.card {
+    padding: 16px 32px;
+    background: rgb(242, 246, 252);
+    border-radius: 32px;
+    transition: border-radius cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+}
+
+.card:hover {
+    transition: border-radius cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+    border-radius: 16px;
+}
+
+.card:hover .artwork img {
+    transition: border-radius cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+    border-radius: 16px;
+}
+
+.card-title {
+    color: rgb(11, 87, 208);
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.card-text {
+    color: rgb(68, 71, 70);
+}
