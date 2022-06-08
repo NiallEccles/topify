@@ -65,8 +65,8 @@ function TopGenre(props: props) {
     <div>
       <h2 className="section-heading">Top Genres</h2>
       <Card style={{ gridArea: "top-genre" }}>
-        {Object.keys(counts).map((genre) => {
-          return <Chip text={genre}></Chip>;
+        {Object.keys(counts).map((genre, index) => {
+          return <Chip key={index} text={genre}></Chip>;
         })}
       </Card>
     </div>
