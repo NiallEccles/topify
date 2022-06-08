@@ -13,7 +13,7 @@ interface props {
 
 function TopTrackss(props: props) {
   return (
-    <div>
+    <div style={{ gridArea: "top-song" }}>
       <h2 className="section-heading">Top Tracks</h2>
       {props.data.items.map((track, index) => {
         if (index < 6) {

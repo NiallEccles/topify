@@ -21,15 +21,7 @@ function App() {
           <DisplayName displayName={data.me.display_name} />
           <ShareButton text="" alignment={"bottom-right"} />
         </Card>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gridArea: "top-genre",
-          }}
-        >
-          <TopGenre data={(data.topArtists as TopArtists)}/>
-        </div>
+        <TopGenre data={(data.topArtists as TopArtists)}/>
         <div
           style={{
             display: "flex",
@@ -51,9 +43,7 @@ function App() {
             />
           </Card>
         </div>
-        <div style={{ gridArea: "top-song" }}>
-          <TopTrackss data={(data.topTracks as TopTracks)}/>
-        </div>
+        <TopTrackss data={(data.topTracks as TopTracks)}/>
       </div>
     </main>
   );

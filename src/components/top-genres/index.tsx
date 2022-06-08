@@ -62,7 +62,13 @@ function TopGenre(props: props) {
   });
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gridArea: "top-genre",
+      }}
+    >
       <h2 className="section-heading">Top Genres</h2>
       <Card style={{ gridArea: "top-genre" }}>
         {Object.keys(counts).map((genre, index) => {
