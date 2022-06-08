@@ -41,8 +41,8 @@ code {
   grid-template-rows: 1fr 1fr 1fr 1fr;
   gap: 1em;
   grid-template-areas:
-    "name stat . top-song"
-    "site-title stat . top-song"
-    "top-genre top-genre . top-song"
-    "top-genre top-genre . top-song";
+    "name       stat        top-song ."
+    "site-title stat        top-song ."
+    "top-genre  top-genre   top-song ."
+    "top-genre  top-genre   top-song .";
 }
