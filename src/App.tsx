@@ -9,26 +9,10 @@ import TopGenre from "./components/top-genres";
 import Chip from "./components/chip";
 import TopTrackss from "./components/top-tracks";
 import { TopTracks } from "./utils/toptracks";
+import { TopArtists } from "./utils/topartists";
 
 function App() {
-  let genres: string[] = [];
-  data.topArtists.items.forEach((item) => {
-    genres.push(...item.genres);
-  });
-
-  interface Counts {
-    [key: string]: number;
-  }
-  let counts: Counts = {};
-  genres.forEach(function (genre) {
-    counts[genre] = (counts[genre] || 0) + 1;
-  });
-
-  Object.keys(counts).forEach((key) => {
-    if (counts[key] < 3) delete counts[key];
-  });
-  console.log(data.topTracks)
-
+  console.log(JSON.stringify(data.topArtists));
   return (
     <main>
       <h1 style={{ gridArea: "site-title" }}>Topify</h1>
@@ -44,12 +28,7 @@ function App() {
             gridArea: "top-genre",
           }}
         >
-          <h2 className="section-heading">Top Genres</h2>
-          <Card style={{ gridArea: "top-genre" }}>
-            {Object.keys(counts).map((genre) => {
-              return <Chip text={genre}></Chip>;
-            })}
-          </Card>
+          <TopGenre data={(data.topArtists as TopArtists)}/>
         </div>
         <div
           style={{
