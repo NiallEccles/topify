@@ -5,6 +5,7 @@
     border-radius: 32px;
     background-size: cover;
     position: relative;
+    background-color: rgb(242, 246, 252);
 }
 
 .top-artist:before {
@@ -28,7 +29,7 @@
 
 .top-artist-name {
     margin: 0;
-    padding: 0px 32px 0px 32px;
+    padding: 16px 32px 0px 32px;
     /* color: rgb(11, 87, 208); */
     color: white;
     font-size: 1.5em;

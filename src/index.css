@@ -38,11 +38,17 @@ code {
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   gap: 1em;
+  /* grid-template-areas:
+    "name         stat        top-song  ."
+    "site-title   stat        top-song  ."
+    "top-genre    top-genre   top-song  ."
+    "top-genre    top-genre   top-song  ."; */
   grid-template-areas:
-    "name       stat        top-song ."
-    "site-title stat        top-song ."
-    "top-genre  top-genre   top-song ."
-    "top-genre  top-genre   top-song .";
+    "name         stat        stat      top-song"
+    "site-title   stat        stat      top-song"
+    "top-genre    stat        stat      top-song"
+    "top-genre    .           .         top-song"
+    "top-genre    .           .         top-song"
 }

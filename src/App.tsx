@@ -6,6 +6,7 @@ import data from "./data";
 import Artwork from "./components/artwork";
 import TopArtist from "./components/top-artist";
 import TopGenre from "./components/top-genres";
+import Chip from "./components/chip";
 
 function App() {
   let genres: string[] = [];
@@ -19,7 +20,11 @@ function App() {
   let counts: Counts = {};
   genres.forEach(function (genre) { counts[genre] = (counts[genre] || 0) + 1; });
 
-  console.log(counts);
+  let topGenres = [];
+
+  Object.keys(counts).forEach(key => {
+    if (counts[key] < 3) delete counts[key];
+  });
 
   return (
     <main>
@@ -29,26 +34,32 @@ function App() {
           <DisplayName displayName={data.me.display_name} />
           <ShareButton text="" alignment={"bottom-right"} />
         </Card>
-        <TopGenre genres={data.topArtists.items} />
-        {/* <Card
-          style={{
-            padding: "0",
-            gridArea: "stat",
-            backgroundImage: `url(${data.topArtists.items[0].images[0].url})`,
-            backgroundSize: "cover",
-          }}
-        > */}
-        <Card
-          style={{
-            padding: "0",
-            gridArea: "stat",
-          }}
-        >
-          <TopArtist
-            artistName={data.topArtists.items[0].name}
-            imgUrl={data.topArtists.items[0].images[0].url}
-          />
-        </Card>
+        <div style={{display: 'flex', flexDirection: 'column', gridArea: "top-genre"}}>
+          <h2 className="section-heading">Top Genres</h2>
+          <Card style={{ gridArea: "top-genre" }}>
+            {
+              Object.keys(counts).map(genre=>{
+                return <Chip text={genre}></Chip>
+              })
+            }
+            {/* <TopGenre genres={data.topArtists.items} /> */}
+          </Card>
+        </div>
+        <div style={{display: 'flex', flexDirection: 'column', gridArea: "stat"}}>
+          <h2 className="section-heading">Top Artist</h2>
+          <Card
+            style={{
+              padding: "0",
+              height: '100%',
+              flex: 1
+            }}
+          >
+            <TopArtist
+              artistName={data.topArtists.items[0].name}
+              imgUrl={data.topArtists.items[0].images[0].url}
+            />
+          </Card>
+        </div>
         <div style={{ gridArea: "top-song" }}>
           <h2 className="section-heading">Top Tracks</h2>
           {data.topTracks.items.map((track, index) => {
@@ -68,7 +79,7 @@ function App() {
             }
           })}
         </div>
-        <Card
+        {/* <Card
           style={{
             padding: "0",
             gridArea: "top-genre",
@@ -78,7 +89,7 @@ function App() {
             artistName={data.topArtists.items[0].name}
             imgUrl={data.topArtists.items[0].images[0].url}
           />
-        </Card>
+        </Card> */}
       </div>
     </main>
   );

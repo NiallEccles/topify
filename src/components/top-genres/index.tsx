@@ -42,10 +42,10 @@ function TopGenre(props: props) {
   // console.log(JSON.stringify(props.genres));
 
   return (
-    <div className="top-artist">
+    <div className="top-genre">
       {props.children}
       <div className="z-correction">
-        <h3 className="top-artist-title">Top Artist</h3>
+        <h3 className="top-artist-title">Top Genre</h3>
       </div>
     </div>
   );
