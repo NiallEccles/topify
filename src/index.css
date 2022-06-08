@@ -46,9 +46,9 @@ code {
     "top-genre    top-genre   top-song  ."
     "top-genre    top-genre   top-song  ."; */
   grid-template-areas:
-    "name         stat        stat      top-song"
-    "site-title   stat        stat      top-song"
-    "top-genre    stat        stat      top-song"
-    "top-genre    .           .         top-song"
-    "top-genre    .           .         top-song"
+    "name         .           .           ."
+    "top-genre    top-artist  top-artist  top-song"
+    "top-genre    top-artist  top-artist  top-song"
+    "top-genre    top-artist  top-artist  top-song"
+    ".            .           .           top-song"
 }
