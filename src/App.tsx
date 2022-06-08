@@ -22,27 +22,10 @@ function App() {
           <ShareButton text="" alignment={"bottom-right"} />
         </Card>
         <TopGenre data={(data.topArtists as TopArtists)}/>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gridArea: "top-artist",
-          }}
-        >
-          <h2 className="section-heading">Top Artist</h2>
-          <Card
-            style={{
-              padding: "0",
-              height: "100%",
-              flex: 1,
-            }}
-          >
-            <TopArtist
-              artistName={data.topArtists.items[0].name}
-              imgUrl={data.topArtists.items[0].images[0].url}
-            />
-          </Card>
-        </div>
+        <TopArtist
+          artistName={data.topArtists.items[0].name}
+          imgUrl={data.topArtists.items[0].images[0].url}
+        />
         <TopTrackss data={(data.topTracks as TopTracks)}/>
       </div>
     </main>
