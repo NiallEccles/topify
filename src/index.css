@@ -52,3 +52,20 @@ code {
     "top-genre    top-artist  top-artist  top-song"
     ".            .           .           top-song"
 }
+
+@media only screen and (max-width: 1200px) {
+  body{
+    padding: 2em;
+  }
+  .container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+    grid-template-areas:
+    "name         top-genre   top-genre   top-genre"
+    "top-artist   top-artist  top-song    top-song"
+    "top-artist   top-artist  top-song    top-song"
+    "top-artist   top-artist  top-song    top-song"
+    ".            .           .           ."
+  }
+}
