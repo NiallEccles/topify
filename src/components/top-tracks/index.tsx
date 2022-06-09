@@ -19,8 +19,9 @@ function TopTrackss(props: props) {
         {props.data.items.map((track, index) => {
           if (index < 6) {
             return (
-              <Card style={{ padding: "0", margin: "0 0 1em 0" }} key={index}>
+              <Card style={{ padding: "0", margin: "0 0 1em 0" }} key={track.name}>
                 <Artwork
+                  key={track.album.images[0].url}
                   songName={track.name}
                   artistName={track.album.artists}
                   imgUrl={track.album.images[0].url}
